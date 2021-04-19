@@ -1,0 +1,167 @@
+#start {
+    height: 100%;
+    width: 100%;
+  }
+
+  .modal-background{
+    background-color: rgba(5, 5, 5, 0.753);
+  }
+  .bg {
+    background-image: url('images/bg.jpg');
+    height: 100%;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+  }
+  body,
+      html {
+        height: 100%;
+        margin: 0;
+      }
+.dropzone{
+    background-color: transparent;
+    height: 300px;
+    border: dashed 3px ;
+    border-radius: 4px;
+    margin: 30px auto;
+    
+}
+#lab{
+    color:#fff;
+}
+.item {
+    touch-action: none;
+    user-select: none;
+    background-color:rgba(36, 36, 206, 0.733);
+    padding: 5px 0px;
+    border-radius: 10px;
+}
+ .item.can-drop{
+    background-color: rgba(5, 194, 5, 0.753);
+}
+
+p{
+    font-family: "Century Gothic";
+    font-size: 15px;
+    font-weight: bold;
+    
+}
+#medicine{
+    margin-top: 30px;
+}
+#snackbar {
+    visibility: hidden;
+    min-width: 250px;
+    margin-left: -125px;
+    background-color: rgb(67, 85, 119);
+    color: #fff;
+    text-align: center;
+    border-radius: 2px;
+    padding: 16px;
+    position: fixed;
+    z-index: 1;
+    left: 50%;
+    bottom: 30px;
+    font-size: 17px;
+  }
+  
+  #snackbar.show {
+    visibility: visible;
+    -webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;
+    animation: fadein 0.5s, fadeout 0.5s 2.5s;
+  }
+.tile{
+    margin-top: 10px;
+}
+
+.card{
+    
+    margin: 20px;
+}
+#patient-tile{
+    margin: 80px 0px;
+    background-color: transparent;
+    height: max-content;
+}
+#check{
+    display: none;   
+    position: relative;
+}
+#timer{
+    
+    float: right;
+    
+    
+}
+.base-timer {
+    position: relative;
+    width: 100px;
+    height: 100px;
+    margin-right: 10px;
+    
+  }
+  
+  .base-timer__svg {
+    transform: scaleX(-1);
+  }
+  
+  .base-timer__circle {
+    fill: none;
+    stroke: none;
+  }
+  
+  .base-timer__path-elapsed {
+    stroke-width: 6px;
+    stroke: #fff;
+  }
+  
+  .base-timer__label {
+    position: absolute;
+    width: 100px;
+    height: 170px;
+    top: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 30px;
+    color:#fff;
+  }
+  #base-timer-text{
+      margin-bottom:5px;
+      margin-top: 40px;
+      font-size: 25px;
+      color:#fff;
+      
+  }
+  #base-timer-text1{
+    margin-bottom:5px;
+    font-size: 25px;
+    color:#fff;
+    
+}
+#base-timer-label{
+    position: absolute;
+    width: 100px;
+    height: 230px;
+    top: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 30px;
+    color:#fff;
+}
+#timer-tile{
+    margin-right: 12px;
+}
+.show-medic{
+    display: none;
+} 
+.drop-target {
+    background-color: #29e;
+    border-color: #fff;
+    border-style: solid;
+  }
+  #components {
+    border-color: #aaa;
+  }
+  
