@@ -309,7 +309,8 @@ interact('.item')
   var sec = 0;
   var minutes =0;
   var seconds = 0;
-
+  function pad ( val ) { return val > 9 ? val : "0" + val; }
+  var timer= 0;
    function openfinalscore(){
     var winner =  document.getElementById("winner");
     winner.classList.add('is-active')
@@ -323,8 +324,7 @@ interact('.item')
 function startGame() {
   var start = document.getElementById("startgame")
   start.classList.remove('is-active')
-  function pad ( val ) { return val > 9 ? val : "0" + val; }
-  var timer= setInterval( function(){
+  timer=setInterval( function(){
     seconds=pad(++sec%60);
     minutes=pad(parseInt(sec/60,10))
        document.getElementById("seconds").innerHTML=seconds;
