@@ -2,40 +2,66 @@
     height: 100%;
     width: 100%;
   }
-
-  .modal-background{
-    background-color: rgba(5, 5, 5, 0.753);
+  #compounds{
+    display: flex;
+    flex-wrap: wrap;
   }
-  .bg {
-    background-image: url('images/bg.jpg');
+.is-divider{
+    color:#fff;
+}
+#wins{
+    background-image: url('images/win.jpg');
+    width: 480px;
+    height: 268px;
+    background-repeat: no-repeat;
+}
+#wintxt{
+    margin-top: 20px; 
+    color: #fff;
+    font-weight: bold;
+}
+button{
+    background-color:  rgba(5, 194, 5, 0.753);
+    border-radius: 10px;
+    
+}
+#startimg{
     height: 100%;
-        background-position: center;
-        background-repeat: no-repeat;
-        background-size: cover;
+    width: 100%;
+}
+ body {
+    background-image: url('images/bg.jpg');
+    background-position: center;
+    background-repeat: repeat-y;
+    background-size: cover;
+    
   }
-  body,
-      html {
-        height: 100%;
-        margin: 0;
-      }
+  
+  html,body {margin: 0; height: 100%; overflow: hidden}
 .dropzone{
     background-color: transparent;
-    height: 300px;
+    height: 250px;
     border: dashed 3px ;
     border-radius: 4px;
     margin: 30px auto;
-    
+    width: 520px;
 }
 #lab{
     color:#fff;
 }
+#patient-icon{
+    margin-bottom: 10px;
+}
 .item {
     touch-action: none;
     user-select: none;
-    background-color:rgba(36, 36, 206, 0.733);
     padding: 5px 0px;
     border-radius: 10px;
+    background-color: rgba(36, 36, 206, 0.733);
+    margin-right: 10px;
+    margin-top: 10px;
 }
+
  .item.can-drop{
     background-color: rgba(5, 194, 5, 0.753);
 }
@@ -44,24 +70,25 @@ p{
     font-family: "Century Gothic";
     font-size: 15px;
     font-weight: bold;
-    
+    color: #fff;
 }
+
 #medicine{
     margin-top: 30px;
 }
 #snackbar {
     visibility: hidden;
-    min-width: 250px;
+    min-width: 200px;
     margin-left: -125px;
-    background-color: rgb(67, 85, 119);
+    background-color: rgba(5, 194, 5, 0.753);
     color: #fff;
     text-align: center;
     border-radius: 2px;
-    padding: 16px;
+    padding: 13px;
     position: fixed;
     z-index: 1;
     left: 50%;
-    bottom: 30px;
+    bottom: 20px;
     font-size: 17px;
   }
   
@@ -79,7 +106,8 @@ p{
     margin: 20px;
 }
 #patient-tile{
-    margin: 80px 0px;
+    margin: 90px 0px;
+    margin-left: 5px;
     background-color: transparent;
     height: max-content;
 }

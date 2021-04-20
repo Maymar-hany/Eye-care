@@ -11,31 +11,39 @@
       </head>
       <script src="https://cdn.jsdelivr.net/npm/interactjs/dist/interact.min.js"></script>
   <body>
-    <div class="bg">
+    
   <div class="tile is-ancestor">
-    <div id="patient-tile" class="tile is-3 is-vertical is-parent">
-      <div id="patients" class="tile is-child">
+    <div id="patient-tile" class="tile is-4 is-vertical is-parent">
+      <div  class="tile is-child">
+        <div id="patients" class="columns is-multiline">
+
+        </div>
        </div>
     </div>
     
     <div class="tile is-parent is-vertical">
       <div class="tile is-child">
-        <div id="compounds" class="columns">
-        </div>
-        <div class="columns">
-          <div class="column is-6">
+        
+        <div id="compounds" class="columns is-multiline">
+        
+      
+        <div id="labs" class="columns">
+          <div class="column">
             <div class="dropzone">
                   <section class="section">
                       <h2 id="lab" class="title has-text-centered">Laboratory</h2>
-                        <div class="column is-half">  
-                        </div>
+                  
                     </section>
                   </div>
                 </div>
-                 <div id="medicine" class="columns" >
-                  </div> 
+                <div class="column">
+                <div id="medicine" class="columns" >
+                </div> 
+              </div>
             </div>
+          </div>
       </div>
+    
     </div>
     <div id="timer-tile" class="tile is-parent is-1 is-vertical">
       
@@ -63,38 +71,35 @@
       </div>
     </div>
   </div>  
-  </div>
+  
 
   <div id="winner" class="modal">
-    <div class="modal-background"></div>
-    <div class="modal-content">
-      <div class="card">
-        <header class="card-header">
+    <div class="modal-background">
+      
+    </div>
+    <div id="wins" class="modal-content has-text-centered">
+     
+        
           <button class="modal-close is-large" aria-label="close" onclick="closefinalscore()"></button>
-          <p class="card-header-title">
-            Winner!
-          </p>
-        </header>
-        <div class="card-content">
-          <div class="content">
-           <p >score: <label id="sc"></label> </p>
-           <p> Time : <label id="min"></label>:<label id="sec"></label></p>
-          </div>
-        </div>
+           <p id="wintxt"  class=" title">   Winner !</p>
+           <p id="wintxt">Score: <label id="sc"></label> </p>
+           <p  id="wintxt"> Time : <label id="min"></label>:<label id="sec"></label></p>
+           <button id="wintxt" onClick="window.location.href=window.location.href">Play Again</button>
+        
     </div>
   </div>   
-</div>
+
 <div id="startgame" class="modal is-active">
-  <div class="modal-background"></div>
-  <div  class="modal-content">
-    <div id="start">
-  <img src="images/start.jpg"  usemap="#workmap">
+  <div class="modal-background">
+  
+  <img id="startimg" src="images/start.jpg"  usemap="#workmap">
   <map name="workmap">
-    <area shape="rect" coords="271,286,370,308" onclick="startGame()">
+    <area shape="rect" coords="294,391,753,567" onclick="startGame()">
  
   </map>
+   
+    
 </div>
- </div>
  
   </div>
    

@@ -1,11 +1,13 @@
 
 var compined={
   'amino+hyaluronic':'images/hyalfid.png',
-  'ginkgo+hyaluronic':'images/trium.jpg'
+  'ginkgo+hyaluronic':'images/trium.png',
+  'nacl+hyaluronic':'images/edenorm.png',
+  'amino+liposome':'images/tearfid.png'
 }
 var infictions = [
  { 
-  'images/trium.jpg':'eye-post', 
+  'images/trium.png':'eye-post', 
  },
  {
   'images/hyalfid.png':'long-screen',
@@ -44,7 +46,7 @@ var compounds = [
     img:'images/hypromelose.png'
   }
   ,
- /*  {
+   {
     id:'aloevera',
     name:'Aloe Vera',
     img:'images/aloevera.png'
@@ -65,7 +67,7 @@ var compounds = [
     id:'nacl',
     name:'NaCL',
     img:'images/nacl.png'
-  } */
+  } 
 ]
 var medicines=[
   {
@@ -76,12 +78,22 @@ var medicines=[
   {
     id:'trium',
     class:'show-medic',
-    img:'images/trium.jpg'
-  }
+    img:'images/trium.png'
+  },
+  {
+    id:'edenorm',
+    class:'show-medic',
+    img:'images/edenorm.png'
+  },
+  {
+    id:'tearfid',
+    class:'show-medic',
+    img:'images/tearfid.png'
+  },
 ]
 var patients =[
   {
-    attribute:'images/trium.jpg',
+    attribute:'images/trium.png',
     id:'eye-post',
     infiction:'Patients with dry eye post eye surgery',
     img:'images/icon-1.png'
@@ -91,7 +103,30 @@ var patients =[
     id:'long-screen',
     infiction:'Patients with Multifactorial Dry eye e.g long screen time',
     img:'images/icon-4.png'
-
+  },
+  {
+    attribute:'images/trium.png',
+    id:'eye-post',
+    infiction:'Patients with dry eye post eye surgery',
+    img:'images/icon-2.png'
+  },
+  {
+    attribute:'images/hyalfid.png',
+    id:'long-screen',
+    infiction:'Patients with Multifactorial Dry eye e.g long screen time',
+    img:'images/icon-3.png'
+  },
+  {
+    attribute:'images/trium.png',
+    id:'eye-post',
+    infiction:'Patients with dry eye post eye surgery',
+    img:'images/icon-5.png'
+  },
+  {
+    attribute:'images/hyalfid.png',
+    id:'long-screen',
+    infiction:'Patients with Multifactorial Dry eye e.g long screen time',
+    img:'images/icon-6.png'
   }
 ]
 var score =0;
@@ -101,47 +136,65 @@ var show ='';
 var compoundsdiv = document.getElementById('compounds');
 var medicine = document.getElementById("medicine");
 var patientsdiv=document.getElementById('patients')
+var lab = document.getElementById('labs')
 window.onload=function() {
   addCompounds();
-  showMedicine();
   addPatients();
+  showMedicine();
 }
 window.dragMoveListener = dragMoveListener
-function showMedicine (){
-  medicines.forEach(element => {
+function showMedicine ( params  ){
+ /* var medic =medicines.find(med =>med.img== params);
     var med = ` 
-    <div class="column is-4">
+    <div class="column is-6">
+    <div id="${medic.id}">
+      
+    <img id="medicImg" src="${medic.img}" class="medicine-item">
+    </div>
+    </div>
+    `
+    
+   medicine.innerHTML =med  */
+   medicines.forEach(element => {
+    var med = ` 
+    
     <div id="${element.id}" class="is-hidden">
       
-    <img id="medicImg" src="${element.img}" class="medicine-item">
-    </div>
+    <img width="140px" height="240px" id="medicImg" src="${element.img}" class="medicine-item">
+    
     </div>
     `
    medicine.innerHTML +=med 
   });
+  
 }
 function addCompounds (){
   compounds.forEach(element => {
-    var compound = `<div class="column is-2">
-    <div id="${element.id}" class="item">  
+    var compound = document.createElement('div')
+    compound.innerHTML=
+    ` 
     
-   <img src="${element.img}" >
-        
-      </div>
-     </div>`
-  compoundsdiv.innerHTML +=compound
+   <img width="140px" height="140px"  src="${element.img}" >
+        `
+     compound.classList.add('item')
+     compound.id=element.id
+  compoundsdiv.insertBefore (compound , lab)
   });
 }
 function addPatients (){
   patients.forEach(element => {
-    var patient = `<div  id="${element.id}" class="dropzone-patient" data-medic="${element.attribute}">
-    <span class="icon is-large is-right has-text-success ">
+    var patient = `
+    <div id="patient-icon">
+    <div  id="${element.id}" class="dropzone-patient" data-medic="${element.attribute}">
+    <span class="icon is-small has-text-success ">
         <i id="check" class=" fa fa-check"></i>
       </span>
-    <figure class="image is-128x128 is-inline-block">  
-    <img src="${element.img}" >
-         </figure>
+     
+    <img width="150" height="150"  src="${element.img}" >
+     </div> 
+     <div class="is-divider" data-content="O"></div>   
     </div
+    
     `
     /*    <div class="card">
     <div  id="${element.id}" class="dropzone-patient" data-medic="${element.attribute}">
@@ -184,12 +237,12 @@ interact('.item')
     listeners: {
        move: dragMoveListener
      },
-    /*  modifiers: [
+     modifiers: [
       interact.modifiers.restrictRect({
         restriction: 'parent',
         endOnly: true
       })
-    ], */
+    ], 
      inertia: true,
        
   })
@@ -226,10 +279,13 @@ interact('.item')
        
        var medicTarget = compined[`${item2}+${data}`] ?? compined[`${data}+${item2}`]
       if(medicTarget!==undefined ){
+
         medicines.forEach(element => {
           if(element.img === medicTarget){
+           // showMedicine(medicTarget)
+            
             show = document.getElementById(element.id)
-           show.classList.remove('is-hidden')
+            show.classList.remove('is-hidden')
         
           }
         })
@@ -278,7 +334,8 @@ interact('.item')
       var i = document.querySelector("#"+targetid).querySelector("#check")
       if (attr == currentmedic ){
           i.style.display='flex' 
-          toast.innerHTML= 'relieved'         
+          toast.innerHTML= 'relieved'
+          toast.style.backgroundColor="green"         
           toast.className = "show";
           item.classList.remove('medicine-item','dragging')
           document.getElementById("score").innerHTML = ++score;
@@ -291,7 +348,9 @@ interact('.item')
           }
           else{
             toast.innerHTML= 'still Suffering!'
+            toast.style.backgroundColor="#ff531a"
             toast.className = "show";
+
             setTimeout(function(){
                toast.className = toast.className.replace("show", ""); }, 4000);
            }
