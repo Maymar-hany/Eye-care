@@ -4,7 +4,7 @@ var compined={
   'ginkgo+hyaluronic':'images/trium.png',
   'nacl+hyaluronic':'images/edenorm.png',
   'amino+liposome':'images/tearfid.png',
-  'carbopol+echinacea':'images/iridium-gel.png',
+  'carbopol+echinacea':'images/iridium.png',
   'amino+lipoic':'images/tioretin.png'
 }
 var infictions = [
@@ -106,9 +106,9 @@ var medicines=[
     img:'images/tioretin.png'
   },
   {
-    id:'iridium-gel',
+    id:'iridium',
     class:'show-medic',
-    img:'images/iridium-gel.png'
+    img:'images/iridium.png'
   },
 ]
 var patients =[
@@ -181,7 +181,7 @@ function showMedicine ( params  ){
        
         <div id="${element.id}" class="single-medicine is-hidden">
       
-    <img  id="medicImg" src="${element.img}" class="medicine-item">
+    <img id="medicImg" src="${element.img}" class="medicine-item">
     </div>
     
     
