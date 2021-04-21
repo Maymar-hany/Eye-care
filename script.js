@@ -105,27 +105,27 @@ var patients =[
     img:'images/icon-4.png'
   },
   {
-    attribute:'images/trium.png',
-    id:'eye-post',
-    infiction:'Patients with dry eye post eye surgery',
+    attribute:'',
+    id:'',
+    infiction:'',
     img:'images/icon-2.png'
   },
   {
-    attribute:'images/hyalfid.png',
-    id:'long-screen',
-    infiction:'Patients with Multifactorial Dry eye e.g long screen time',
+    attribute:'',
+    id:'',
+    infiction:'',
     img:'images/icon-3.png'
   },
   {
-    attribute:'images/trium.png',
-    id:'eye-post',
-    infiction:'Patients with dry eye post eye surgery',
+    attribute:'',
+    id:'',
+    infiction:'',
     img:'images/icon-5.png'
   },
   {
-    attribute:'images/hyalfid.png',
-    id:'long-screen',
-    infiction:'Patients with Multifactorial Dry eye e.g long screen time',
+    attribute:'',
+    id:'',
+    infiction:'',
     img:'images/icon-6.png'
   }
 ]
@@ -144,28 +144,30 @@ window.onload=function() {
 }
 window.dragMoveListener = dragMoveListener
 function showMedicine ( params  ){
- /* var medic =medicines.find(med =>med.img== params);
+ /*  var medic =medicines.find(med =>med.img== params);
+  if(medic !== undefined){
+    
     var med = ` 
     <div class="column is-6">
     <div id="${medic.id}">
       
-    <img id="medicImg" src="${medic.img}" class="medicine-item">
+    <img id="medicImg" width="150px" height="200px" src="${medic.img}" class="medicine-item">
     </div>
     </div>
-    `
-    
-   medicine.innerHTML =med  */
-   medicines.forEach(element => {
+    ` 
+   medicine.innerHTML =med  }*/
+    medicines.forEach(element => {
     var med = ` 
-    
-    <div id="${element.id}" class="is-hidden">
+       
+        <div id="${element.id}" class="single-medicine is-hidden">
       
-    <img width="140px" height="240px" id="medicImg" src="${element.img}" class="medicine-item">
-    
+    <img  id="medicImg" src="${element.img}" class="medicine-item">
     </div>
+    
+    
     `
    medicine.innerHTML +=med 
-  });
+  }); 
   
 }
 function addCompounds (){
@@ -174,9 +176,11 @@ function addCompounds (){
     compound.innerHTML=
     ` 
     
-   <img width="140px" height="140px"  src="${element.img}" >
+   <img width="250" height="250" src="${element.img}" >
         `
      compound.classList.add('item')
+     compound.classList.add('column')
+     compound.classList.add('is-2')
      compound.id=element.id
   compoundsdiv.insertBefore (compound , lab)
   });
@@ -184,17 +188,16 @@ function addCompounds (){
 function addPatients (){
   patients.forEach(element => {
     var patient = `
+    <div class="column is-6">
     <div id="patient-icon">
     <div  id="${element.id}" class="dropzone-patient" data-medic="${element.attribute}">
-    <span class="icon is-small has-text-success ">
-        <i id="check" class=" fa fa-check"></i>
-      </span>
+   
      
     <img width="150" height="150"  src="${element.img}" >
      </div> 
      <div class="is-divider" data-content="O"></div>   
     </div
-    
+    </div>
     `
     /*    <div class="card">
     <div  id="${element.id}" class="dropzone-patient" data-medic="${element.attribute}">
@@ -331,15 +334,15 @@ interact('.item')
        var targetid= event.target.id
       var attr=document.getElementById(targetid).getAttribute('data-medic')
       var toast = document.getElementById("snackbar");
-      var i = document.querySelector("#"+targetid).querySelector("#check")
+     // var i = document.querySelector("#"+targetid).querySelector("#check")
       if (attr == currentmedic ){
-          i.style.display='flex' 
+         // i.style.display='flex' 
           toast.innerHTML= 'relieved'
           toast.style.backgroundColor="green"         
           toast.className = "show";
           item.classList.remove('medicine-item','dragging')
           document.getElementById("score").innerHTML = ++score;
-          setTimeout(function(){ toast.className = toast.className.replace("show", "");}, 4000);
+          setTimeout(function(){ toast.className = toast.className.replace("show", "");}, 1000);
           
           if (score===medicines.length){
             clearInterval(this.timer)
@@ -350,9 +353,7 @@ interact('.item')
             toast.innerHTML= 'still Suffering!'
             toast.style.backgroundColor="#ff531a"
             toast.className = "show";
-
-            setTimeout(function(){
-               toast.className = toast.className.replace("show", ""); }, 4000);
+            setTimeout(function(){ toast.className = toast.className.replace("show", "");}, 1000);
            }
            
     },
@@ -361,8 +362,10 @@ interact('.item')
       item.classList.remove('can-drop')
       item.classList.add('cannot-drop')
       var d= event.target.id
-       var i = document.querySelector("#"+d).querySelector("#check")
-      i.style.display = 'none'
+     
+     /*   var i = document.querySelector("#"+d).querySelector("#check")
+      i.style.display = 'none' */
+      
     }
   })
   var sec = 0;
