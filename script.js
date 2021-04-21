@@ -359,9 +359,8 @@ interact('.item')
           toast.innerHTML= 'relieved'
           toast.style.backgroundColor="green"         
           toast.className = "show";
-          item.classList.remove('medicine-item','dragging')
-          document.getElementById("score").innerHTML = ++score;
-          setTimeout(function(){ toast.className = toast.className.replace("show", "");}, 1000);
+          
+          setTimeout(function(){ toast.className = toast.className.replace("show", "");}, 2000);
           
           if (score===medicines.length){
             clearInterval(this.timer)
@@ -372,7 +371,7 @@ interact('.item')
             toast.innerHTML= 'still Suffering!'
             toast.style.backgroundColor="#ff531a"
             toast.className = "show";
-            setTimeout(function(){ toast.className = toast.className.replace("show", "");}, 1000);
+            setTimeout(function(){ toast.className = toast.className.replace("show", "");}, 2000);
            }
            
     },
@@ -385,7 +384,16 @@ interact('.item')
      /*   var i = document.querySelector("#"+d).querySelector("#check")
       i.style.display = 'none' */
       
+    },
+    ondrop:function(event) {
+      const item = event.relatedTarget
+      item.classList.remove('medicine-item','dragging')
+      if (!item.className.includes('medicine-item')){
+        
+      document.getElementById("score").innerHTML = ++score;
     }
+    }
+
   })
   var sec = 0;
   var minutes =0;
