@@ -41,24 +41,24 @@ button{
     width: 400px;
     height: 200px;
 }
- body {
+html {
     background-image: url('images/bg.jpg');
-    background-position: center;
-    background-repeat: repeat-y;
+    background-position: top center;
+    background-repeat: no-repeat;
     background-size: cover; 
-    
+    -webkit-background-size: 100%;
+-moz-background-size: cover;
+-o-background-size: cover;
+min-height: 100%;
   }
-  
-  html,body {
-      margin: 0; height: 100%; overflow: hidden
-    }
+
 .dropzone{
     background-color: transparent;
-    height: 250px;
+    height: 300px;
     border: dashed 3px ;
     border-radius: 4px;
-    margin: 30px 60px;
-    width: 550px;
+    margin: 30px;
+    width: 800px;
 }
 #lab{
     color:#fff;
@@ -91,8 +91,8 @@ p{
 .single-medicine{
     position: absolute;
     top: 0px;
-    width: 200px;
-    height: 250px;
+    width: 100px;
+    height: 110px;
 }
 #snackbar {
     visibility: hidden;
@@ -124,7 +124,7 @@ p{
     margin: 20px;
 }
 #patient-tile{
-    margin: 70px 0px;
+    margin-top: 150px;
     margin-left: 5px;
     background-color: transparent;
     height: max-content;
@@ -133,12 +133,7 @@ p{
     display: none;   
     position: relative;
 }
-#timer{
-    
-    float: right;
-    
-    
-}
+
 .base-timer {
     position: relative;
     width: 100px;

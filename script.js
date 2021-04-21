@@ -3,7 +3,9 @@ var compined={
   'amino+hyaluronic':'images/hyalfid.png',
   'ginkgo+hyaluronic':'images/trium.png',
   'nacl+hyaluronic':'images/edenorm.png',
-  'amino+liposome':'images/tearfid.png'
+  'amino+liposome':'images/tearfid.png',
+  'carbopol+echinacea':'images/iridium-gel.png',
+  'amino+lipoic':'images/tioretin.png'
 }
 var infictions = [
  { 
@@ -11,7 +13,15 @@ var infictions = [
  },
  {
   'images/hyalfid.png':'long-screen',
-  
+ },
+ {
+  'images/tioretin.png':'diabetic', 
+ },
+ {
+  'images/edenorm.png':'post-surgery', 
+ },
+ {
+  'images/tearfid.png':'Meibomian', 
  },
 ]
 var compounds = [
@@ -90,6 +100,16 @@ var medicines=[
     class:'show-medic',
     img:'images/tearfid.png'
   },
+  {
+    id:'tioretin',
+    class:'show-medic',
+    img:'images/tioretin.png'
+  },
+  {
+    id:'iridium-gel',
+    class:'show-medic',
+    img:'images/iridium-gel.png'
+  },
 ]
 var patients =[
   {
@@ -105,14 +125,14 @@ var patients =[
     img:'images/icon-4.png'
   },
   {
-    attribute:'',
-    id:'',
+    attribute:'images/edenorm.png',
+    id:'post-surgery',
     infiction:'',
     img:'images/icon-2.png'
   },
   {
-    attribute:'',
-    id:'',
+    attribute:'images/tearfid.png',
+    id:'Meibomian',
     infiction:'',
     img:'images/icon-3.png'
   },
@@ -123,8 +143,8 @@ var patients =[
     img:'images/icon-5.png'
   },
   {
-    attribute:'',
-    id:'',
+    attribute:'images/tioretin.png',
+    id:'diabetic',
     infiction:'',
     img:'images/icon-6.png'
   }
@@ -194,8 +214,7 @@ function addPatients (){
    
      
     <img width="150" height="150"  src="${element.img}" >
-     </div> 
-     <div class="is-divider" data-content="O"></div>   
+     </div>   
     </div
     </div>
     `
