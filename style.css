@@ -25,7 +25,8 @@ button{
     border-radius: 10px;
     
 }
-.modal-background{
+
+.modal-background.srt{
     background-image: url('images/start.jpg');
     background-position: top center;
     background-repeat: no-repeat;
