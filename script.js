@@ -199,8 +199,8 @@ function addCompounds (){
    <img width="250" height="250" src="${element.img}" >
         `
      compound.classList.add('item')
-     compound.classList.add('column')
-     compound.classList.add('is-2')
+   //  compound.classList.add('column')
+    // compound.classList.add('is-2')
      compound.id=element.id
   compoundsdiv.insertBefore (compound , lab)
   });

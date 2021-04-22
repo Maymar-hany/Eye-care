@@ -6,9 +6,7 @@
     display: flex;
     flex-wrap: wrap;
   }
-.is-divider{
-    color:#fff;
-}
+
 #wins{
     background-image: url('images/win.jpg');
     width: 480px;
@@ -27,7 +25,7 @@ button{
 }
 @media (max-width: 480px){
     .modal-background.srt{
-        background-image: url('images/start-mob.jpg');
+        background-image: url('images/start-mb.jpg');
         background-position: top center;
         background-repeat: no-repeat;
         background-size: cover; 
@@ -37,6 +35,19 @@ button{
          min-height: 100%; 
         
     }
+}
+@media (min-width: 481px) and (max-width: 1024px) {
+    .modal-background.srt{
+        background-image: url('images/start.jpg');
+        background-position: top center;
+        background-repeat: no-repeat;
+        background-size: cover; 
+        -webkit-background-size: 100%;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+         min-height: 100%;
+        
+    }   
 }
 @media (min-width: 1025px){
 .modal-background.srt{
@@ -61,7 +72,7 @@ button{
 }
 @media (max-width: 480px){
     html {
-        background-image: url('images/bg-mb.jpg');
+        background-image: url('images/bgm.jpg');
         background-position: top center;
         background-repeat: no-repeat;
         background-size: cover; 
@@ -71,7 +82,8 @@ button{
          min-height: 100%;
       }   
 }
-@media (min-width: 1025px){
+@media (min-width: 481px)  {
+
 html {
     background-image: url('images/bg.jpg');
     background-position: top center;
@@ -106,6 +118,8 @@ html {
     background-color: rgba(20, 20, 161, 0.616);
     margin-right: 10px;
     margin-top: 10px;
+    width: 130px;
+    height: 130px;
 }
 
  .item.can-drop{
@@ -170,7 +184,63 @@ p{
     display: none;   
     position: relative;
 }
-
+@media (max-width: 480px){
+.base-timer {
+    position: relative;
+    float: right;
+    width: 40px;
+    height: 40px;
+    padding-top: 15px;
+    margin-right: 5px;
+    
+  }
+  
+  #time{
+      float: right;
+ 
+  }
+  #logo{
+      background-image: url('images/bg-logo.jpg');
+      background-repeat: no-repeat;
+      position: relative;
+    float: left;
+    width: 35px;
+    height: 50px;
+  }
+ 
+  .base-timer__svg {
+    transform: scaleX(-1);
+  }
+  
+  .base-timer__circle {
+    fill: none;
+    stroke: none;
+  }
+  
+  .base-timer__path-elapsed {
+    stroke-width: 5px;
+    stroke: #fff;
+  }
+  
+  .base-timer__label {
+    position: absolute;
+    width: 40px;
+    height: 100px;
+    top: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 10px;
+    color:#fff;
+  }
+ 
+  #base-timer-text{
+    margin-bottom:5px;
+    font-size: 10px;
+    color:#fff;
+  }   
+}
+@media (min-width: 481px){
 .base-timer {
     position: relative;
     width: 100px;
@@ -189,28 +259,27 @@ p{
   }
   
   .base-timer__path-elapsed {
-    stroke-width: 6px;
+    stroke-width: 5px;
     stroke: #fff;
   }
   
   .base-timer__label {
     position: absolute;
     width: 100px;
-    height: 170px;
+    height: 150px;
     top: 0;
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 30px;
+    font-size: 25px;
     color:#fff;
   }
  
   #base-timer-text{
     margin-bottom:5px;
-    font-size: 25px;
+    font-size: 20px;
     color:#fff;
-    
-}
+  } }
 @media(max-width: 767px) { /* <== You can change this break point as per your  needs */
     .reverse-columns {
       flex-direction: column-reverse;
@@ -232,4 +301,9 @@ p{
   #components {
     border-color: #aaa;
   }
+  @media (max-width: 480px) {
+      #compounds{
+          margin-top: 0px;
+      }
+  } 
   
