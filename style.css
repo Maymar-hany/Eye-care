@@ -303,7 +303,7 @@ p{
   }
   @media (max-width: 480px) {
       #compounds{
-          margin-top: 0px;
+          padding: 15px;
       }
   } 
   
