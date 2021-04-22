@@ -270,7 +270,8 @@ interact('.item')
   })
   interact('.medicine-item')
   .draggable({
-    listeners: { move: dragMoveListener } 
+    listeners: { move: dragMoveListener } ,
+    inertia: true,
   })
  
   interact('.dropzone')
