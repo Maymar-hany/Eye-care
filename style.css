@@ -323,6 +323,11 @@ p{
      .item.can-drop{
         background-color: rgba(5, 194, 5, 0.753);
     }
+    .medicine-item {
+        touch-action: none;
+        user-select: none;
+       
+    }
     #medicine{
         margin-top: 30px;
         position: relative;
