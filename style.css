@@ -303,10 +303,24 @@ p{
   }
   @media (max-width: 480px) {
       #compounds{
-          margin-left: 15px;
+         
           display: flex;
           align-items: center;
           justify-content: center;
       }
+      .item {
+        touch-action: none;
+        user-select: none;
+        border-radius: 10px;
+        background-color: rgba(20, 20, 161, 0.616);
+        margin-right: 10px;
+        margin-top: 10px;
+        width: 100px;
+        height: 100px;
+    }
+    
+     .item.can-drop{
+        background-color: rgba(5, 194, 5, 0.753);
+    }
   } 
   
