@@ -12,7 +12,7 @@
       <script src="https://cdn.jsdelivr.net/npm/interactjs/dist/interact.min.js"></script>
   <body>
     
-  <div class="tile is-ancestor">
+  <div class="tile is-ancestor is-flex reverse-columns">
     <div id="patient-tile" class="tile is-3 is-vertical is-parent">
       <div  class="tile is-child">
         <div id="patients" class="columns is-mobile is-multiline">
@@ -46,10 +46,11 @@
       </div>
     
     </div>
-    <div id="timer-tile" class="tile is-mobile is-parent is-1 is-vertical">
-      
+    <div id="timer-tile" class="tile is-2 is-parent is-vertical">
+        <div class="columns is-mobile">
+          <div class="column ">
         <div class="base-timer">
-          <p id="base-timer-text1" class="title has-text-centered">Timer</p>
+          <p id="base-timer-text" class="title has-text-centered">Timer</p>
           <svg class="base-timer__svg" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
             <g class="base-timer__circle">
               <circle class="base-timer__path-elapsed" cx="50" cy="50" r="45"></circle>
@@ -59,6 +60,8 @@
             <label id="minutes">00</label>:<label id="seconds">00</label>
           </span>
         </div>
+      </div>
+      <div class="column">
       <div class="base-timer">
         <p id="base-timer-text"  class="title has-text-centered">Score</p>
         <svg class="base-timer__svg" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
@@ -71,8 +74,9 @@
         </span>
       </div>
     </div>
+  </div>
   </div>  
-  
+</div>
 
   <div id="winner" class="modal">
     <div class="modal-background is-mobile">

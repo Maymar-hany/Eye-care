@@ -175,7 +175,7 @@ p{
     position: relative;
     width: 100px;
     height: 100px;
-    margin-right: 10px;
+   
     
   }
   
@@ -204,32 +204,22 @@ p{
     font-size: 30px;
     color:#fff;
   }
+ 
   #base-timer-text{
-      margin-bottom:5px;
-      margin-top: 40px;
-      font-size: 25px;
-      color:#fff;
-      
-  }
-  #base-timer-text1{
     margin-bottom:5px;
     font-size: 25px;
     color:#fff;
     
 }
-#base-timer-label{
-    position: absolute;
-    width: 100px;
-    height: 230px;
-    top: 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 30px;
-    color:#fff;
-}
+@media(max-width: 767px) { /* <== You can change this break point as per your  needs */
+    .reverse-columns {
+      flex-direction: column-reverse;
+      display: flex;
+    }
+  }
+
 #timer-tile{
-    margin-right: 12px;
+ margin-right: 22px;
 }
 .show-medic{
     display: none;
