@@ -303,7 +303,10 @@ p{
   }
   @media (max-width: 480px) {
       #compounds{
-          padding: 15px;
+          margin-left: 15px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
       }
   } 
   
