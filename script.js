@@ -4,7 +4,7 @@ var compined={
   'ginkgo+hyaluronic':'images/trium.png',
   'nacl+hyaluronic':'images/edenorm.png',
   'amino+liposome':'images/tearfid.png',
-  'carbopol+echinacea':'images/iridium-gel.png',
+  'carbopol+echinacea':'images/iridium.png',
   'amino+lipoic':'images/tioretin.png'
 }
 var infictions = [
@@ -23,6 +23,9 @@ var infictions = [
  {
   'images/tearfid.png':'Meibomian', 
  },
+ {
+  'images/iridium.png':'dry'
+ }
 ]
 var compounds = [
   {
@@ -106,9 +109,9 @@ var medicines=[
     img:'images/tioretin.png'
   },
   {
-    id:'iridium-gel',
+    id:'iridium',
     class:'show-medic',
-    img:'images/iridium-gel.png'
+    img:'images/iridium.png'
   },
 ]
 var patients =[
@@ -137,8 +140,8 @@ var patients =[
     img:'images/icon-3.png'
   },
   {
-    attribute:'',
-    id:'',
+    attribute:'images/iridium.png',
+    id:'dry',
     infiction:'',
     img:'images/icon-5.png'
   },
@@ -352,6 +355,7 @@ interact('.item')
          currentmedic = item.getAttribute('src')
        }
        var targetid= event.target.id
+       console.log(targetid);
       var attr=document.getElementById(targetid).getAttribute('data-medic')
       var toast = document.getElementById("snackbar");
      // var i = document.querySelector("#"+targetid).querySelector("#check")
@@ -363,10 +367,7 @@ interact('.item')
           
           setTimeout(function(){ toast.className = toast.className.replace("show", "");}, 2000);
           
-          if (score===medicines.length){
-            clearInterval(this.timer)
-               openfinalscore();
-           }
+        
           }
           else{
             toast.innerHTML= 'still Suffering!'
@@ -393,6 +394,10 @@ interact('.item')
         
       document.getElementById("score").innerHTML = ++score;
     }
+    if (score===medicines.length){
+      clearInterval(this.timer)
+         openfinalscore();
+     }
     }
 
   })
