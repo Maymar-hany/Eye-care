@@ -133,17 +133,7 @@ p{
     color: #fff;
 }
 
-#medicine{
-    margin-top: 30px;
-    position: relative;
-}
-.single-medicine{
-    position: absolute;
-    top: 0px;
-    width: 100px;
-    padding: 10px;
-    height: 160px;
-}
+
 
 #snackbar {
     visibility: hidden;
@@ -241,6 +231,17 @@ p{
   }   
 }
 @media (min-width: 481px){
+    #medicine{
+        margin-top: 30px;
+        position: relative;
+    }
+    .single-medicine{
+        position: absolute;
+        top: 0px;
+        width: 100px;
+        padding: 10px;
+        height: 160px;
+    }
 .base-timer {
     position: relative;
     width: 100px;
@@ -321,6 +322,21 @@ p{
     
      .item.can-drop{
         background-color: rgba(5, 194, 5, 0.753);
+    }
+    #medicine{
+        margin-top: 30px;
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .single-medicine{
+        position: absolute;
+        top: 0px;
+        width: 100px;
+        padding: 10px;
+        height: 160px;
+       
     }
   } 
   
