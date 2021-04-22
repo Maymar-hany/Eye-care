@@ -25,17 +25,31 @@ button{
     border-radius: 10px;
     
 }
-
+@media (max-width: 480px){
+    .modal-background.srt{
+        background-image: url('images/start-mob.jpg');
+        background-position: top center;
+        background-repeat: no-repeat;
+        background-size: cover; 
+        -webkit-background-size: 100%;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+         min-height: 100%; 
+        
+    }
+}
+@media (min-width: 1025px){
 .modal-background.srt{
     background-image: url('images/start.jpg');
     background-position: top center;
     background-repeat: no-repeat;
     background-size: cover; 
     -webkit-background-size: 100%;
--moz-background-size: cover;
--o-background-size: cover;
-min-height: 100%;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+     min-height: 100%;
     
+}
 }
 #strt{
     text-align: center;
@@ -45,24 +59,41 @@ min-height: 100%;
     width: 300px;
     height: 200px;
 }
+@media (max-width: 480px){
+    html {
+        background-image: url('images/bg-mb.jpg');
+        background-position: top center;
+        background-repeat: no-repeat;
+        background-size: cover; 
+        -webkit-background-size: 100%;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+         min-height: 100%;
+      }   
+}
+@media (min-width: 1025px){
 html {
     background-image: url('images/bg.jpg');
     background-position: top center;
     background-repeat: no-repeat;
     background-size: cover; 
     -webkit-background-size: 100%;
--moz-background-size: cover;
--o-background-size: cover;
-min-height: 100%;
-  }
-
+    -moz-background-size: cover;
+    -o-background-size: cover;
+     min-height: 100%;
+  }}
+#labs{
+    width: 100%;
+}
 .dropzone{
     background-color: transparent;
-    height: 280px;
+    height: 250px;
     border: dashed 3px ;
     border-radius: 4px;
     margin: 30px;
-    width: 800px;
+    
+    padding-top: 10px;
+    
 }
 #lab{
     color:#fff;
