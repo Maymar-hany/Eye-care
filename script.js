@@ -10,22 +10,13 @@ var compined={
 var infictions = [
  { 
   'images/trium.png':'eye-post', 
- },
- {
   'images/hyalfid.png':'long-screen',
- },
- {
   'images/tioretin.png':'diabetic', 
- },
- {
   'images/edenorm.png':'post-surgery', 
- },
- {
   'images/tearfid.png':'Meibomian', 
- },
- {
   'images/iridium.png':'dry'
  }
+ 
 ]
 var compounds = [
   {
@@ -182,9 +173,9 @@ function showMedicine ( params  ){
     medicines.forEach(element => {
     var med = ` 
        
-        <div id="${element.id}" class="single-medicine is-hidden">
+        <div id="${element.id}" class="single-medicine is-hidden medicine-item">
       
-    <img  id="medicImg" src="${element.img}" class="medicine-item">
+    <img  id="medicImg" src="${element.img}">
     </div>
     
     
@@ -326,7 +317,7 @@ interact('.item')
         medic=document.getElementById('medicine')
       var currentmedic = document.getElementById(show.id)
       if(currentmedic !== null){
-      if(currentmedic.querySelector("#medicImg").className.includes('medicine-item')){
+      if(currentmedic.className.includes('medicine-item')){
         currentmedic.classList.add('is-hidden')
       }
     }
@@ -335,7 +326,7 @@ interact('.item')
   interact('.dropzone-patient')
   .dropzone({
     accept: '.medicine-item',
-    overlap: 0.25,
+    overlap: 0.50,
    
     ondropactivate: function (event) {
       const item = event.relatedTarget
@@ -349,19 +340,21 @@ interact('.item')
       const item = event.relatedTarget
       item.classList.remove('cannot-drop')
       item.classList.add('can-drop')  
-      
+      console.log(item);
        if(item.className.includes('medicine-item')){
          //currentmedic = item.querySelector("#"+show.id).querySelector('#medicImg').getAttribute('src') 
-         currentmedic = item.getAttribute('src')
+         currentmedic = item.querySelector('#medicImg').getAttribute('src')
        }
        var targetid= event.target.id
-       console.log(targetid);
+       
       var attr=document.getElementById(targetid).getAttribute('data-medic')
       var toast = document.getElementById("snackbar");
      // var i = document.querySelector("#"+targetid).querySelector("#check")
       if (attr == currentmedic ){
          // i.style.display='flex' 
+         item.classList.remove('medicine-item','dragging')
           toast.innerHTML= 'relieved'
+
           toast.style.backgroundColor="green"         
           toast.className = "show";
           
@@ -389,7 +382,7 @@ interact('.item')
     },
     ondrop:function(event) {
       const item = event.relatedTarget
-      item.classList.remove('medicine-item','dragging')
+      
       if (!item.className.includes('medicine-item')){
         
       document.getElementById("score").innerHTML = ++score;
