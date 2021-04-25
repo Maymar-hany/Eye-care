@@ -151,6 +151,7 @@ var compoundsdiv = document.getElementById('compounds');
 var medicine = document.getElementById("medicine");
 var patientsdiv=document.getElementById('patients')
 var lab = document.getElementById('labs')
+var toast = document.getElementById("snackbar");
 window.onload=function() {
   addCompounds();
   addPatients();
@@ -340,7 +341,7 @@ interact('.item')
       const item = event.relatedTarget
       item.classList.remove('cannot-drop')
       item.classList.add('can-drop')  
-      console.log(item);
+      
        if(item.className.includes('medicine-item')){
          //currentmedic = item.querySelector("#"+show.id).querySelector('#medicImg').getAttribute('src') 
          currentmedic = item.querySelector('#medicImg').getAttribute('src')
@@ -348,7 +349,7 @@ interact('.item')
        var targetid= event.target.id
        
       var attr=document.getElementById(targetid).getAttribute('data-medic')
-      var toast = document.getElementById("snackbar");
+     
      // var i = document.querySelector("#"+targetid).querySelector("#check")
       if (attr == currentmedic ){
          // i.style.display='flex' 
@@ -357,16 +358,13 @@ interact('.item')
 
           toast.style.backgroundColor="green"         
           toast.className = "show";
-          
-          setTimeout(function(){ toast.className = toast.className.replace("show", "");}, 2000);
-          
-        
+  
           }
           else{
             toast.innerHTML= 'still Suffering!'
             toast.style.backgroundColor="#ff531a"
             toast.className = "show";
-            setTimeout(function(){ toast.className = toast.className.replace("show", "");}, 2000);
+            
            }
            
     },
@@ -375,7 +373,10 @@ interact('.item')
       item.classList.remove('can-drop')
       item.classList.add('cannot-drop')
       var d= event.target.id
-     
+      if(toast.innerText==='still Suffering!'){
+        
+        setTimeout(function(){ toast.className = toast.className.replace("show", "");}, 50);
+        }
      /*   var i = document.querySelector("#"+d).querySelector("#check")
       i.style.display = 'none' */
       
@@ -384,7 +385,7 @@ interact('.item')
       const item = event.relatedTarget
       
       if (!item.className.includes('medicine-item')){
-        
+        setTimeout(function(){ toast.className = toast.className.replace("show", "");}, 3000); 
       document.getElementById("score").innerHTML = ++score;
     }
     if (score===medicines.length){
